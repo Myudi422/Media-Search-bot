@@ -50,40 +50,38 @@ async def answer(bot, query):
         )
 
     if results:
-        switch_pm_text = f"{emoji.FILE_FOLDER} Results"
-        if text:
-            switch_pm_text += f" for {text}"
+        switch_pm_text = f"{emoji.CHECK_MARK} Hasil"
+        if string:
+            switch_pm_text += f" Untuk {string}"
 
-        await query.answer(
-            results=results,
-            cache_time=cache_time,
-            switch_pm_text=switch_pm_text,
-            switch_pm_parameter="start",
-            next_offset=str(next_offset)
-        )
+        await query.answer(results=results,
+                           cache_time=cache_time,
+                           switch_pm_text=switch_pm_text,
+                           switch_pm_parameter="start",
+                           next_offset=str(next_offset))
     else:
 
-        switch_pm_text = f'{emoji.CROSS_MARK} No results'
-        if text:
-            switch_pm_text += f' for "{text}"'
-
-        await query.answer(
-            results=[],
-            cache_time=cache_time,
-            switch_pm_text=switch_pm_text,
-            switch_pm_parameter="okay",
-        )
-
+        switch_pm_text = f'{emoji.CROSS_MARK} Belum ada - Silahkan Hub. Admin! (Klik disini)'
+        
+        await query.answer(results=results,
+                           cache_time=cache_time,
+                           switch_pm_text=switch_pm_text,
+                           switch_pm_parameter="invite",
+                           next_offset=str(next_offset))
 
 def get_reply_markup(username, query):
-    url = 't.me/share/url?url=' + quote(SHARE_BUTTON_TEXT.format(username=username))
+    url = 'trakteer.id/ccgnimeX'
+    url1 = 't.me/share/url?url=' + quote(SHARE_BUTTON_TEXT.format(username=username))
     buttons = [
         [
-            InlineKeyboardButton('Search again', switch_inline_query_current_chat=query),
-            InlineKeyboardButton('Share bot', url=url),
-        ]
+            InlineKeyboardButton('🔍 Cari Lagi', switch_inline_query_current_chat=query),
+            InlineKeyboardButton('📤 Share', url=url1),
+            InlineKeyboardButton('❣️Donasi', url=url),
+        ],
+        [InlineKeyboardButton('Versi Batch & OP Song', url="https://t.me/downloadanimebatch/302")],
     ]
     return InlineKeyboardMarkup(buttons)
+
 
 
 def size_formatter(size):
