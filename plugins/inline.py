@@ -51,7 +51,7 @@ async def answer(bot, query):
 
     if results:
         switch_pm_text = f"{emoji.CHECK_MARK} Hasil"
-        if string:
+        if text:
             switch_pm_text += f" Untuk {text}"
 
         await query.answer(
