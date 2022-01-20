@@ -1,4 +1,7 @@
 import logging
+import datetime
+import time
+import os
 from urllib.parse import quote
 
 from pyrogram import Client, emoji, filters
@@ -44,7 +47,7 @@ async def answer(bot, query):
                 title=file.file_name,
                 file_id=file.file_id,
                 caption=file.caption or "",
-                description=f'Size: {size_formatter(file.file_size)}\nType: {file.file_type}',
+                description=f'Ukuran: {size_formatter(file.file_size)}\nTipe: {file.file_type}\nTanggal: {datetime.now().strftime("%Y-%m-%d_%I-%M-%S_%p")}',
                 reply_markup=reply_markup
             )
         )
