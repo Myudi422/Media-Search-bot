@@ -75,11 +75,9 @@ async def answer(bot, query):
 
 def get_reply_markup(username, query):
     url = 'trakteer.id/ccgnimeX'
-    url1 = 't.me/share/url?url=' + quote(SHARE_BUTTON_TEXT.format(username=username))
     buttons = [
         [
             InlineKeyboardButton('🔍 Cari Lagi', switch_inline_query_current_chat=query),
-            InlineKeyboardButton('📤 Share', url=url1),
             InlineKeyboardButton('❣️Donasi', url=url),
         ],
         [InlineKeyboardButton('Daftar Anime Tersedia', url="https://t.me/downloadanimebatch/302")]
