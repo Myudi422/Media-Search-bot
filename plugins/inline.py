@@ -20,7 +20,7 @@ async def answer(bot, query):
         await query.answer(
             results=[],
             cache_time=0,
-            switch_pm_text='Subscribe Channel terlebih dahulu!!',
+            switch_pm_text='Subscribe Channel dulu, klik disini!',
             switch_pm_parameter="subscribe",
         )
         return
@@ -82,7 +82,7 @@ def get_reply_markup(username, query):
             InlineKeyboardButton('📤 Share', url=url1),
             InlineKeyboardButton('❣️Donasi', url=url),
         ],
-        [InlineKeyboardButton('Versi Batch & OP Song', url="https://t.me/downloadanimebatch/302")]
+        [InlineKeyboardButton('Daftar Anime Tersedia', url="https://t.me/downloadanimebatch/302")]
     ]
     return InlineKeyboardMarkup(buttons)
 
