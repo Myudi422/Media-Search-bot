@@ -63,13 +63,13 @@ async def answer(bot, query):
         )
     else:
 
-        switch_pm_text = f'{emoji.CROSS_MARK} Belum ada - Silahkan Hub. Admin! (Klik disini)'
+        switch_pm_text = f'{emoji.CROSS_MARK} Belum ada - Silahkan Hub. Admin!'
 
         await query.answer(
             results=[],
             cache_time=cache_time,
             switch_pm_text=switch_pm_text,
-            switch_pm_parameter="okay",
+            switch_pm_parameter="start",
         )
 
 
